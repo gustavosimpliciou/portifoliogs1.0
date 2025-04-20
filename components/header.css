@@ -1,0 +1,155 @@
+/* Header and Navigation Styles */
+#header {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-800), var(--primary-900));
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-3);
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Navigation */
+nav {
+  position: relative;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-4);
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-2);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-300);
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: var(--primary-300);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.nav-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all var(--transition-normal);
+}
+
+/* Hero Section */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-3);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-4);
+  line-height: 1.2;
+  max-width: 800px;
+}
+
+.hero .cta-button {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  font-size: 1.1rem;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--primary-900);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right var(--transition-normal);
+    z-index: 10;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  .nav-menu li {
+    margin: var(--space-3) 0;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero .cta-button {
+    padding: var(--space-2) var(--space-4);
+    font-size: 1rem;
+  }
+}
