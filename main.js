@@ -10,6 +10,13 @@ const formStatus = document.getElementById('formStatus');
 const submitButton = contactForm.querySelector('.submit-button');
 const buttonText = submitButton.querySelector('.button-text');
 const buttonLoader = submitButton.querySelector('.button-loader');
+const projectLinks = document.querySelectorAll('.project-link');
+const projectPopup = document.getElementById('project-popup');
+const projectIframe = document.getElementById('project-iframe');
+const popupClose = document.querySelector('.popup-close');
+const popupOverlay = document.querySelector('.popup-overlay');
+const scrollUpBtn = document.querySelector('.scroll-up');
+const scrollDownBtn = document.querySelector('.scroll-down');
 
 // Mobile Navigation Toggle
 navToggle.addEventListener('click', () => {
@@ -125,6 +132,45 @@ function isValidEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
+
+// Project Popup
+projectLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const projectUrl = link.getAttribute('href');
+    console.log(`Opening popup for project: ${projectUrl}`); // Debug log
+    projectIframe.src = projectUrl;
+    projectPopup.classList.add('active');
+    document.body.classList.add('no-scroll');
+  });
+});
+
+popupClose.addEventListener('click', () => {
+  projectPopup.classList.remove('active');
+  projectIframe.src = ''; // Reset iframe
+  document.body.classList.remove('no-scroll');
+});
+
+popupOverlay.addEventListener('click', () => {
+  projectPopup.classList.remove('active');
+  projectIframe.src = ''; // Reset iframe
+  document.body.classList.remove('no-scroll');
+});
+
+// Scroll buttons for iframe
+scrollUpBtn.addEventListener('click', () => {
+  projectIframe.contentWindow.scrollBy({
+    top: -100,
+    behavior: 'smooth'
+  });
+});
+
+scrollDownBtn.addEventListener('click', () => {
+  projectIframe.contentWindow.scrollBy({
+    top: 100,
+    behavior: 'smooth'
+  });
+});
 
 // Scroll Reveal Animation
 function revealElements() {

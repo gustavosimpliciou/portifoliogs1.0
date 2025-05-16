@@ -144,6 +144,40 @@
               <a href="tarefas/index.html" class="project-link">Ver Projeto</a>
             </div>
           </div>
+
+          <!-- Project 4: MinhaLimpeza -->
+          <div class="project-card reveal-element">
+            <div class="project-image">
+              <img src="minhalimpeza.JPG" alt="MinhaLimpeza" />
+            </div>
+            <div class="project-details">
+              <h3>MinhaLimpeza</h3>
+              <p>Um aplicativo de agendamento e controle de finanças para serviços de limpeza, com funcionalidades para gerenciar reservas, pagamentos e relatórios financeiros.</p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <a href="minhalimpeza.app/index.html" class="project-link">Ver Projeto</a>
+            </div>
+          </div>
+
+          <!-- Project 5: Geneseez -->
+          <div class="project-card reveal-element">
+            <div class="project-image">
+              <img src="geneseez.jpg" alt="Site Geneseez" />
+            </div>
+            <div class="project-details">
+              <h3>Site Geneseez</h3>
+              <p>Um site institucional para a Geneseez, com design moderno, seções informativas e foco em apresentar serviços e valores da empresa.</p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <a href="https://geneseez.com/" class="project-link">Ver Projeto</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -172,7 +206,7 @@
           
           <div class="contact-form-container reveal-element">
             <a href="https://wa.me/558391427149?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20um%20projeto." class="submit-button">
-              <span class="button-text">Faça seu Orçamento</span>
+              <span class="button-text">Entre em Contato</span>
             </a>
           </div>
         </div>
@@ -202,6 +236,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- Popup for project preview -->
+  <div id="project-popup" class="popup">
+    <div class="popup-overlay"></div>
+    <div class="popup-content">
+      <button class="popup-close">×</button>
+      <div class="iframe-container">
+        <iframe id="project-iframe" src="" frameborder="0"></iframe>
+        <div class="scroll-buttons">
+          <button class="scroll-btn scroll-up">↑</button>
+          <button class="scroll-btn scroll-down">↓</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="/main.js"></script>
 </body>
